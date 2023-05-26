@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Website - Survey</title>
+  <style>
+    /* CSS styling for the black background */
+    body {
+      background-color: black;
+      color: white;
+    }
+    
+    /* CSS styling for the content */
+    .container {
+      width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 5px;
+      text-align: center;
+    }
+    
+    /* CSS styling for form inputs */
+    input[type="text"], input[type="number"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+    
+    input[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Welcome to My Website - Survey</h1>
+    
+    <!-- Name and Age survey -->
+    <form id="survey-form">
+      <label for="name">Name:</label>
+      <input type="text" id="name" required>
+      
+      <label for="age">Age:</label>
+      <input type="number" id="age" required>
+      
+      <input type="submit" value="Submit">
+    </form>
+    
+    <!-- AI Check Test -->
+    <h2>AI Check Test</h2>
+    <p>Are you a human? Answer the following question:</p>
+    <p>What is the capital of France?</p>
+    <input type="text" id="ai-answer" required>
+    <input type="submit" value="Submit AI Check">
+  </div>
+  
+  <script>
+    // Name and Age survey form submission
+    document.getElementById("survey-form").addEventListener("submit", function(event) {
+      event.preventDefault();
+      
+      var name = document.getElementById("name").value;
+      var age = document.getElementById("age").value;
+      
+      // Perform further actions with the submitted data
+      console.log("Name:", name);
+      console.log("Age:", age);
+      
+      // Redirect to the signup page
+      window.location.href = "signup.html";
+    });
+    
+    // AI Check Test form submission
+    document.getElementById("ai-answer").addEventListener("submit", function(event) {
+      event.preventDefault();
+      
+      var answer = document.getElementById("ai-answer").value;
+      
+      // Perform AI check and display results
+      if (answer.toLowerCase() === "paris") {
+        alert("Congratulations! You passed the AI check.");
+      } else {
+        alert("Oops! Wrong answer. Please try again.");
+      }
+    });
+  </script>
+</body>
+</html>
